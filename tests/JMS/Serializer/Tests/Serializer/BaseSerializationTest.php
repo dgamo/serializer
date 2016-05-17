@@ -361,6 +361,12 @@ abstract class BaseSerializationTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    public function testDateTimeImmutable()
+    {
+        $datetime = new \DateTimeImmutable('2011-08-30 00:00', new \DateTimeZone('UTC'));
+        $this->assertEquals($this->getContent('date_time_immutable'), $datetime);
+    }
+
     public function getDateTime()
     {
         return array(
